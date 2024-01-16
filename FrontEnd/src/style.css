@@ -1,0 +1,594 @@
+/* CustomNavbar.css */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.profile {
+  position: absolute;
+  margin-left: -12px;
+  top: 55.7px;
+  color: #f5f2f2;
+  overflow-y: auto;
+}
+
+.HomeList {
+  position: absolute;
+  left: 1px;
+
+  top: 55.6px;
+  opacity: 0.99;
+  z-index: 5;
+}
+
+.HomeList li {
+  margin-top: 25px;
+  border-bottom: 1px solid;
+  font-weight: 100;
+  padding: 5px;
+  list-style-type: none;
+}
+
+.HomeList li:hover {
+  box-shadow: 0 0 10px;
+  color: rgb(120, 201, 120);
+  background: #000000;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+.pr {
+  height: 700px;
+  /* Adjust the height as needed */
+  overflow-y: auto;
+
+}
+
+.Api {
+  margin-left: -12px;
+  top: 55.6px;
+  position: absolute;
+  
+}
+
+.navbar-brand img {
+  filter: invert(1);
+  /* Invert the color of the logo */
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem;
+  margin: 0 15px;
+  color: #fff;
+
+}
+
+.navbar-nav .nav-link:hover {
+  box-shadow: 0 0 10px;
+  color: rgb(120, 201, 120);
+  background: #000000;
+
+}
+
+.navbar {
+  opacity: 0.9;
+}
+
+.pr {
+  width: 100%;
+  opacity: 0.9;
+}
+
+.cart:hover {
+  background-color: rgb(74, 152, 71);
+  color: black !important;
+  border: none !important;
+  transition: 0.3s;
+
+}
+
+.lbr {
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.lbr a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-bottom: 1px solid;
+}
+
+.lbr a:hover {
+  background-color: rgb(115, 233, 89);
+  color: #000000
+}
+
+.formdiv {
+  position: absolute;
+  opacity: 0.9;
+  top: 56px;
+  height: 800px;
+}
+
+.formContent {
+  width: 40%;
+  margin: auto;
+}
+
+/* ImageSlider.css */
+
+.carousel,
+.carousel-slider {
+  position: relative;
+  margin: auto;
+  max-width: 100%;
+
+}
+
+.mapped {
+  width: 200px;
+  margin: 30px 50px;
+}
+
+.overlay-text {
+  top: 10%;
+  height: 40px;
+}
+
+.Dropdown::-webkit-scrollbar {
+  width: 0.5em;
+  /* Set width to a small value */
+}
+
+.Dropdown::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  /* Make the thumb (dragging handle) transparent */
+}
+
+.Dropdown {
+  position: fixed;
+  top: 49px;
+  width: 100%;
+  z-index: 3;
+  opacity: 0.8;
+  overflow: hidden;
+  overflow-y: scroll !important;
+  scroll-snap-type: none;
+}
+
+.Mybtn {
+  position: sticky;
+  top: 0px;
+  display: block;
+  text-align: center;
+  color: aliceblue;
+  z-index: 5;
+  margin: auto;
+
+}
+
+nav {
+  height: 55px;
+}
+
+.main p {
+  padding: 5px;
+  font-size: 30px;
+  border: 1px solid;
+}
+
+.lbr a {
+
+  display: block;
+  width: 80%;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: auto;
+  color: white;
+  text-align: start;
+  padding: 5px;
+}
+
+.lbr h1 {
+  border-bottom: 2px solid;
+  text-align: center;
+  font-size: 20px;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.products {
+
+  overflow: auto;
+  width: 100%;
+  margin: auto;
+  justify-content: center
+}
+
+.product {
+  position: absolute;
+  top: 55.7px;
+  color: #f5f2f2;
+  margin-left: -12px;
+  overflow-y: auto;
+
+}
+
+
+
+.card {
+  color: white;
+  
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 p {
+  border-bottom: 1px solid;
+  font-weight: 100;
+  padding: 5px;
+}
+
+.cb:hover {
+  box-shadow: 0 0 10px;
+  color: rgb(120, 201, 120) !important;
+  background: black !important;
+  opacity: 0.8;
+}
+
+;
+
+.cb {
+
+  font-weight: 100;
+  padding: 5px;
+  color: white
+}
+
+.card:hover {
+  box-shadow: 0 0 10px;
+  color: rgb(120, 201, 120);
+  
+}
+
+.card-body:hover {
+  background: #000000;
+  width: 100%;
+}
+
+.navcontent {
+  width: 400px;
+
+}
+
+.offcanvas {
+  width: 300px;
+  opacity: 0.9;
+  background: black;
+  visibility: visible;
+}
+
+.offcanvas-header {
+  color: white;
+  margin-top: 50px;
+}
+
+.before::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  /* Adjust the border-width to control the size of the triangle */
+  border-color: transparent transparent transparent #000;
+  /* Adjust the last value for the triangle color */
+  margin-right: 8px;
+
+}
+
+.before {
+  left: 0px;
+  top: 56px;
+  position: absolute;
+  height: 500px;
+  opacity: 0.5;
+  width: 20px
+}
+
+.before:hover,
+.after:hover,
+.down-arrow:hover {
+  opacity: 0.7;
+}
+
+.after::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 8px 5px 5px;
+  /* Adjust the border-width to control the size of the triangle */
+  border-color: transparent #000 transparent transparent;
+  /* Adjust the second value for the triangle color */
+  margin-right: 8px;
+  /* Adjust as needed for spacing */
+}
+
+.down-arrow::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 10px 8px;
+  /* Adjust the border-width to control the size of the arrow */
+  border-color: transparent transparent #000 transparent;
+  /* Adjust the third value for the arrow color */
+  margin-left: 5px;
+  /* Adjust as needed for spacing */
+}
+
+.down-arrow {
+  margin-top: 0;
+  opacity: 0.4
+}
+
+.after {
+  position: absolute;
+  top: 105px;
+  right: 0px;
+  height: 500px;
+
+}
+
+
+.kk {
+  top: 150px;
+  color: #fff;
+  font-size: 26px;
+  bottom: 0;
+  margin-top: 0;
+  padding: 5px;
+}
+
+.qq {
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+  color: white;
+  background: black;
+  position: absolute;
+  top: 0;
+
+}
+
+.qq:hover {
+  opacity: 0.8
+}
+
+.slider {
+  height: 500px;
+}
+
+/* GrievancesInput.css */
+
+.grievances-input-container {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+
+textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.grievances-input-container button {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Help.css */
+
+.help-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+
+.contact-options {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-option {
+  margin: 0 20px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.topcan {
+  display: none;
+}
+
+/* Add additional styling based on your design preferences */
+
+/* Media query for tablets */
+@media (max-width: 770px) {
+
+  .img {
+    width: 150px;
+  }
+ 
+ .cartFs{
+  font-size: smaller;
+ }
+  .formdiv {
+    position: static;
+    width: 100%;
+
+  }
+
+  .carousel {
+    max-width: 100%;
+    margin: auto
+  }
+
+  .navcontent {
+    width: 100%;
+    position: absolute;
+  }
+
+  .lbr a {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .navbar-brand, .cart {
+    display: none;
+  }
+  .topcan {
+    display: block;
+  }
+  .menubar{
+    width: 100%;
+  }
+  .offcanvas-top {
+    width: 100%;
+    position: absolute;
+    display: none;
+    top: 56px;
+    margin-top: 50px;
+  }
+  .ul li a{
+    font-size:medium;
+    font-weight: 100;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  .searchBox input, .searchBox button{
+    margin-top: 5px;
+    height: 29px;
+  }
+  .searchBox button {
+    padding: 2px;
+  }
+
+  .searchBox input {
+    
+    width:100px;
+  }
+
+  .img {
+    width: 100px;
+  }
+
+  .cart {
+    display: none;
+  }
+
+  .slider {
+    height: 300px;
+  }
+
+  .carousel {
+    max-width: 100%;
+  }
+
+
+  .main p {
+
+    font-size: 15px;
+  }
+
+  
+  .wego img{
+    width:80px;
+    height:90px;
+  }
+  .wego h5 {
+    font-size: medium;
+  }
+  .wego h4, .wego h6,.wego h5 .wego p, .wego h1, .wego h2, .wego h3 {
+    font-size:small;
+    padding:0px;
+    line-height: 1;
+  }
+  .wego h1, .wego h2, .wego h3,.wego p {
+    font-size:medium;
+    padding:0px;
+    line-height: 1;
+  }
+  .wego .mb-2, .wego .m-3 ,.h {
+    margin-bottom: 1px !important;
+  }
+  .wego{
+    padding:0;
+  }
+  .wego button{
+    font-size: smaller;
+    padding: 3px
+  }
+  .Api div{
+    flex-wrap: wrap;
+  }
+  .wego .m-3{
+        margin: 0px !important;
+  }
+  .Api{
+    height: 900px;
+    display:block !important;
+  }
+  .cartIm img{
+    width: 40px;
+    height: 50px;
+ }
+ .order{
+  font-size: small;
+ }
+ .op{
+  overflow: scroll;
+  height: 334px;
+ }
+ .formdivdiv input, .h input{
+  height:30px;
+ }
+ .formdivdiv .mb-3{
+  margin-bottom: 3px !important;
+ }
+ .formdivdiv, .h{
+  font-size: small;
+ }
+ 
+}
