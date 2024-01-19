@@ -119,7 +119,9 @@ router.post("/login", async (req, res) => {
   }
 });
 
-
+router.get('/', async(req, res) => {
+  res.send('Hello World!');
+});
 
 router.post("/books", upload.single("image"), async (req, res) => {
   try {

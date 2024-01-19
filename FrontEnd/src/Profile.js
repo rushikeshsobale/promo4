@@ -57,7 +57,7 @@ const Profile = () => {
     // Implement logic to save edited profile data to the server
     // For simplicity, let's assume there's a separate API endpoint for updating user profile
     try {
-      const response = await fetch(`http://localhost:3070/updateData/${userProfile._id}`, {
+      const response = await fetch(`http://localhost:80/updateData/${userProfile._id}`, {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json',

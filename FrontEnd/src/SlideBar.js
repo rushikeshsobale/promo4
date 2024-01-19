@@ -8,7 +8,7 @@ const ImageSlider = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiData = await fetch("http://localhost:3070/books", {
+        const apiData = await fetch("http://localhost:80/books", {
           method: "GET",
         });
         const data = await apiData.json();

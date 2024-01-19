@@ -25,7 +25,7 @@ const Api = (userId) => {
   console.log(token+"toktn")
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:3070/books/${_id}`);
+      const response = await fetch(`http://localhost:80/books/${_id}`);
       const result = await response.json();
       setData(result);
     } catch (error) {
@@ -35,7 +35,7 @@ const Api = (userId) => {
   const addToCart = async () => {
     try {
       // Wrap the book data in a 'newItem' property
-      const response = await fetch(`http://localhost:3070/addToCart/${extractedUserId}`, {
+      const response = await fetch(`http://localhost:80/addToCart/${extractedUserId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
