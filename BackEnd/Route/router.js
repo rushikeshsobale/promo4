@@ -19,7 +19,7 @@ router.get("/getData", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
+ 
 router.post("/postData", async (req, res) => {
   try {
     const { userName, email, password, phoneNo, address, birthdate } = req.body;
