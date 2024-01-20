@@ -87,7 +87,7 @@ router.post("/login", async (req, res) => {
 
   try {
     const validatemail = await allData.findOne({ email: email });
-    console.log(validatemail?.email, validatemail?.password, "hiiiii");
+    
 
     if (validatemail) {
       const confirmpassword = await bcrypt.compare(
