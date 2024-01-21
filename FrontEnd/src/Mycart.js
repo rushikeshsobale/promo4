@@ -24,7 +24,7 @@ export default function Mycart() {
   console.log(token);
   const fetchUserCart = async () => {
     try {
-      const response = await fetch('http://localhost:80/profile', {
+      const response = await fetch('http://localhost:8080/profile', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

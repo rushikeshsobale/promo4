@@ -50,7 +50,7 @@ const CheckoutPage = () => {
 
     const handlePlaceOrder = async() => {
         try{
-        const response = await fetch("http://localhost:80/orders",{
+        const response = await fetch("http://localhost:8080/orders",{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),  

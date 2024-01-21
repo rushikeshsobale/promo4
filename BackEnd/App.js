@@ -17,6 +17,6 @@ const cors = require("cors");
  app.use(express.json());
  require("./Conn/connection.js")
  app.use(router);
- app.listen(80,(err)=>{
+ app.listen(8080,(err)=>{
     console.log("connection succesfull");
  })
