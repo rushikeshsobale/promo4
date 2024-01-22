@@ -174,7 +174,7 @@ router.get('/books/:id', async (req, res) => {
 
 const verifyToken = (req, res, next) => {
   const Newtoken = req.cookies.token;
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Origin', 'http://34.231.110.65:3000');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
