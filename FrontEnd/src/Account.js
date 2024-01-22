@@ -76,7 +76,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:8080/postData', {
+      const response = await fetch('http://34.231.110.65:8080/postData', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),

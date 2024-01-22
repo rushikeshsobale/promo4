@@ -17,7 +17,7 @@ const Profile = () => {
   
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch("http://localhost:8080/profile", {
+        const response = await fetch("http://34.231.110.65:8080/profile", {
           method: "GET",
           headers: { 'Content-Type': 'application/json' },
           credentials: "include", // Include credentials for sending cookies
