@@ -55,7 +55,7 @@ export default function Mycart() {
   const handleRemoveFromCart = async (itemId) => {
 
     try {
-      const response = await fetch(`http://34.231.110.65:80/removeFromCart/${itemId}`, {
+      const response = await fetch(`http://44.211.24.153:8080/removeFromCart/${itemId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
