@@ -50,7 +50,7 @@ const CheckoutPage = () => {
 
     const handlePlaceOrder = async() => {
         try{
-        const response = await fetch("http://44.211.24.153:8080/orders",{
+        const response = await fetch("http://3.210.184.253:8080/orders",{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),  

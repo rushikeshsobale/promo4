@@ -32,7 +32,7 @@ const Navbar = () => {
   console.log("aaaaa" + cart)
   const fetchUserProfile = async () => {
     try {
-      const response = await fetch("http://44.211.24.153:8080/profile", {
+      const response = await fetch("http://3.210.184.253:8080/profile", {
         method: "GET",
         headers: { 'Content-Type': 'application/json' },
         credentials: "include", // Include credentials for sending cookies

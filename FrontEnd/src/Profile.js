@@ -17,7 +17,7 @@ const Profile = () => {
   
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch("http://44.211.24.153:8080/profile", {
+        const response = await fetch("3.210.184.253:8080/profile", {
           method: "GET",
           headers: { 'Content-Type': 'application/json' },
           credentials: "include", // Include credentials for sending cookies
@@ -57,7 +57,7 @@ const Profile = () => {
     // Implement logic to save edited profile data to the server
     // For simplicity, let's assume there's a separate API endpoint for updating user profile
     try {
-      const response = await fetch(`http://44.211.24.153:8080/updateData/${userProfile._id}`, {
+      const response = await fetch(`http://3.210.184.253:8080/updateData/${userProfile._id}`, {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json',

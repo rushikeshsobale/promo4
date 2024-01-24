@@ -24,7 +24,7 @@ export default function Mycart() {
   console.log(token);
   const fetchUserCart = async () => {
     try {
-      const response = await fetch('http://34.231.110.65:8080/profile', {
+      const response = await fetch('http://3.210.184.253:8080/profile', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export default function Mycart() {
   const handleRemoveFromCart = async (itemId) => {
 
     try {
-      const response = await fetch(`http://44.211.24.153:8080/removeFromCart/${itemId}`, {
+      const response = await fetch(`http://3.210.184.253:8080/removeFromCart/${itemId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ export default function HomeList() {
 
 const logOut = async () => {
   try {
-    const response = await fetch("http://44.211.24.153:8080/logout", {
+    const response = await fetch("http://3.210.184.253:8080/logout", {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include', 

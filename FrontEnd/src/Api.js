@@ -25,7 +25,7 @@ const Api = (userId) => {
   console.log(token+"toktn")
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://44.211.24.153:8080/books/${_id}`);
+      const response = await fetch(`http://3.210.184.253:8080/books/${_id}`);
       const result = await response.json();
       setData(result);
     } catch (error) {
@@ -35,7 +35,7 @@ const Api = (userId) => {
   const addToCart = async () => {
     try {
       // Wrap the book data in a 'newItem' property
-      const response = await fetch(`http://44.211.24.153:8080/addToCart/${extractedUserId}`, {
+      const response = await fetch(`http://3.210.184.253:8080/addToCart/${extractedUserId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
