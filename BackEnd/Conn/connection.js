@@ -5,12 +5,9 @@ const mongoose = require('mongoose');
 // Replace '3.236.216.233' with the actual IP address or hostname of your MongoDB server
 // Replace '27017' with the actual port number if it's different
 // Replace 'bookapp' with the actual name of your MongoDB database
-const connectionString = 'mongodb://arunruhs123:Arun1912@3.210.184.253:27017/admin';
 
-mongoose.connect(connectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect('mongodb://arunrush123:Arun1912@3.210.184.253:27017/admin');
+
 
 const db = mongoose.connection;
 
