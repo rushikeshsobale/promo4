@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const cors = require("cors");
  const corsOptions = {
-   origin: true, // Replace with your frontend origin
+   origin: 'http://3.210.184.253:3000', // Replace with your frontend origin
    credentials: true,
  };
  app.use(cors(corsOptions));
