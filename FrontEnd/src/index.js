@@ -1,19 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-
 import reportWebVitals from './reportWebVitals';
 import Navbar from './Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './Header'
-//import Header from './Header';
+import Header from './Header';
 import './style.css';
-//import ImageSlider from './Mycarousel';
-//import Aside from './Aside';
 import Main from './Main';
 import Gallery from './SlideBar'
 import Footer from './Footer'
-import LoginForm from './Account.js'
 import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
