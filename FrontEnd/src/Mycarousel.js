@@ -34,7 +34,7 @@ const ImageSlider = () => {
   }, []);
 
   return (
-    <div className=" mb-3">
+    <div className=" mb-3" >
       <div className="  ">
         <Carousel  showThumbs={false}>
             { data?.map((value, index) => (

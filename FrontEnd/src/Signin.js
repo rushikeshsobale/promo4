@@ -11,7 +11,7 @@ const LoginForm = () => {
   const [emailerror, setemailerror] = useState('');
   const [passworderror, setpassworderror] = useState('');
   const [alert, setAlert] = useState(false);
-
+  const viewportHeight = window.innerHeight;
   const data = {
     email: email,
     password: password
@@ -54,7 +54,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className=" container-fluid m-auto  bg-dark formdiv  ">
+    <div className=" container-fluid m-auto  bg-dark formdiv" style={{height:`${viewportHeight-50}px`, overflow:"scroll"}}>
           <div className=" bg-dark text-white mx-auto formdivdiv " style={{marginTop:"-350px"}}>
             <div className=" card-body cb ">
               

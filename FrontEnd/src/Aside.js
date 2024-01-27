@@ -19,14 +19,12 @@ export default function Aside() {
 
   return (
     <>
-      <Mybtn fun={handleClick} />
+     
       <div className="Dropdown" style={style}>
 
         <div className={`bg-dark d-flex flex-column px-4  justify-content-center sticky-top`} >
           {/* Dropdown items go here */}
-         
           <div className="container">
-                  
             <div className=" row lbr  px-2 py-5 ">
             <h3 className="text-white text-center">LIBRARY</h3>
               <div className="col-12 col-sm-6 col-lg-3 text-white my-3 " href="#">
@@ -77,13 +75,10 @@ export default function Aside() {
                   <p>Literary fiction, mainstream fiction, non-genre fiction, serious fiction, high literature, artistic literature, and sometimes just literature are labels that, in the book trade, refer to market novels</p>
                 </a>
               </div>
-
             </div>
           </div>
         </div>
-
       </div>
-
     </>
   );
 }

@@ -2,14 +2,14 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="footer my-3 bg-dark ">
+    <footer className="card my-3 bg-dark ">
       <div className="container">
-        <div className="footer-content  justify-content-center text-white">
+        <div className=" card-body footer-content  justify-content-center text-white">
           <div className="footer-section ">
             <h4>About Us</h4>
             <p>Discover a world of books with our bookstore app. Find your next great read!</p>
           </div>
-          <div className="footer-section ">
+          <div className="footer-section  ">
             <h4>Quick Links</h4>
             <ul>
               <li><a href="/">Home</a></li>

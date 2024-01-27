@@ -6,6 +6,7 @@ const Profile = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [error, setError] = useState(null);
   const [loader, setLoader] = useState(false);
+  const viewportHeight = window.innerHeight;
   const [showEditModal, setShowEditModal] = useState(false);
   const [editedProfile, setEditedProfile] = useState({
     userName: "",
@@ -87,10 +88,10 @@ const Profile = () => {
   };
 
   return (
-    <div className="container-fluid m-auto profile d-flex bg-dark text-light p-5 justify-content-center">
+    <div className="container-fluid m-auto profile d-flex bg-dark text-light justify-content-center" style={{"height":`${viewportHeight}px`}}>
       {!userProfile ? (
         // Render user-friendly response for not logged in
-        <div className="cb text-center my-5 p-3">
+        <div className="cb text-center p-3" style={{'margin-top': '-350px'}}>
           <h2>LOOKS LIKE YOU HAVEN'T SIGNED IN</h2>
           <p>Please log in to view your profile.</p>
           <Link to="/Signin">
@@ -99,7 +100,7 @@ const Profile = () => {
         </div>
       ) : loader ? (
         // Render profile if loader is true
-        <div className="cb mx-auto p-3">
+        <div className="cb mx-auto p-3"  style={{'margin-top': '-350px'}}>
           <h1>User Profile</h1>
           {error ? (
             <p>Error: {error}</p>

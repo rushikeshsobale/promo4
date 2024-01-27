@@ -24,17 +24,17 @@ const ImageSlider = () => {
 
   return (
     <>
-   <div className='container-fluid bg-dark'>
+   <div className='container-fluid bg-dark ' style={{height:`${viewportHeight-50}px`, overflow:"scroll"}}>
       {loading ? (
         // Loader while fetching data
-        <div className="text-center container-fluid  bg-dark ">
+        <div className="text-center container-fluid  bg-dark w-100 ">
           <div className="spinner-border text-success mt-5" role="status">
             <span >Loading...</span>
           </div>
         </div>
       ) : (
         // Render data once it's fetched
-        <div className="container-fluid bg-dark " style={{height:`${viewportHeight-50}px`, overflow:"scroll"}}>
+        <div className="container-fluid bg-dark " >
           <div className='row ' >
             {data?.map((value, index) => (
               <div className=" col-6 col-sm-3 col-md-3 col-lg-2 mb-3 bg-dark cb text-white"  key={index}>

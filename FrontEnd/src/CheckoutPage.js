@@ -191,6 +191,20 @@ const CheckoutPage = () => {
                         <div className="mb-5">
                             <div>
                                 <label className="form-label">Payment Method:</label>
+                                <div className="  form-check m-3">
+                                <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    id="cashOnDelivery"
+                                    name="paymentMethod"
+                                    value="cashOnDelivery"
+                                    checked={formData.paymentMethod === "cashOnDelivery"}
+                                    onChange={handlePaymentMethodChange}
+                                />
+                                <label className="form-check-label" htmlFor="cashOnDelivery">
+                                    Cash on Delivery
+                                </label>
+                            </div>
                                 <div className=" form-check m-3">
                                     <input
                                         className="form-check-input"
@@ -209,20 +223,7 @@ const CheckoutPage = () => {
                                 {formData.paymentMethod === 'creditCard' && <CardDetailsForm />}
                             </div>
 
-                            <div className="  form-check m-3">
-                                <input
-                                    className="form-check-input"
-                                    type="radio"
-                                    id="cashOnDelivery"
-                                    name="paymentMethod"
-                                    value="cashOnDelivery"
-                                    checked={formData.paymentMethod === "cashOnDelivery"}
-                                    onChange={handlePaymentMethodChange}
-                                />
-                                <label className="form-check-label" htmlFor="cashOnDelivery">
-                                    Cash on Delivery
-                                </label>
-                            </div>
+                            
                             <div className="form-check m-3">
                                 <input
                                     className="form-check-input"
