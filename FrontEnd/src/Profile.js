@@ -15,37 +15,32 @@ const Profile = () => {
     // Add other fields as needed
   });
 
-  
-    const fetchUserProfile = async () => {
-      try {
-        const response = await fetch("3.210.184.253:8080/profile", {
-          method: "GET",
-          headers: { 'Content-Type': 'application/json' },
-          credentials: "include", // Include credentials for sending cookies
-        });
+  const fetchUserProfile = async () => {
+    try {
+      const response = await fetch("http://3.210.184.253:8080/profile", {
+        method: "GET",
+        headers: { 'Content-Type': 'application/json' },
+        credentials: "include", // Include credentials for sending cookies
+      });
 
-        if (response.ok) {
-          const userData = await response.json();
-          console.log("USERDATA" + userData);
-          setLoader(true);
-          setUserProfile(userData);
-         
-        } else {
-          setError(`Error: ${response.status} - ${response.statusText}`);
-          setLoader(true);
-        }
-      } catch (error) {
-        setError(`Error fetching user profile: ${error.message}`);
+      if (response.ok) {
+        const userData = await response.json();
+        setUserProfile(userData);
+        setLoader(true);
+      } else {
+        setError(`Error: ${response.status} - ${response.statusText}`);
       }
-    
-    };
-    useEffect(() => {
+    } catch (error) {
+      setError(`Error fetching user profile: ${error.message}`);
+    }
+  };
+
+  useEffect(() => {
     fetchUserProfile();
   }, []);
 
   const handleEdit = () => {
     setShowEditModal(true);
-    // Initialize editedProfile state with current profile data
     setEditedProfile({
       userName: userProfile.userName,
       email: userProfile.email,
@@ -55,8 +50,6 @@ const Profile = () => {
   };
    
   const handleSave = async () => {
-    // Implement logic to save edited profile data to the server
-    // For simplicity, let's assume there's a separate API endpoint for updating user profile
     try {
       const response = await fetch(`http://3.210.184.253:8080/updateData/${userProfile._id}`, {
         method: "PUT",
@@ -68,7 +61,6 @@ const Profile = () => {
       });
           
       if (response.ok) {
-        // Fetch updated profile data after saving
         fetchUserProfile();
         setShowEditModal(false);
       } else {
@@ -88,10 +80,9 @@ const Profile = () => {
   };
 
   return (
-    <div className="container-fluid m-auto profile d-flex bg-dark text-light justify-content-center" style={{"height":`${viewportHeight}px`}}>
+    <main className="container-fluid profile-container d-flex bg-dark text-light justify-content-center" style={{ height: `${viewportHeight}px` }}>
       {!userProfile ? (
-        // Render user-friendly response for not logged in
-        <div className="cb text-center p-3" style={{'margin-top': '-350px'}}>
+        <div className="cb text-center p-3" style={{ marginTop: '-350px' }}>
           <h2>LOOKS LIKE YOU HAVEN'T SIGNED IN</h2>
           <p>Please log in to view your profile.</p>
           <Link to="/Signin">
@@ -99,13 +90,12 @@ const Profile = () => {
           </Link>
         </div>
       ) : loader ? (
-        // Render profile if loader is true
-        <div className="cb mx-auto p-3"  style={{'margin-top': '-350px'}}>
+        <div className="cb mx-auto p-3" style={{ marginTop: '-350px' }}>
           <h1>User Profile</h1>
           {error ? (
             <p>Error: {error}</p>
           ) : userProfile ? (
-            <div className="fs-3 ">
+            <div className="fs-3">
               <p>Username: {userProfile.userName}</p>
               <p>Email: {userProfile.email}</p>
               <p>Phone Number: {userProfile.phoneNo}</p>
@@ -114,28 +104,24 @@ const Profile = () => {
           ) : (
             <p>Loading...</p>
           )}
-          {/* Edit Profile Button */}
           <Button variant="primary" onClick={handleEdit}>
             Edit Profile
           </Button>
         </div>
-      ) : (                            
-        // Render loading spinner
+      ) : (
         <div className="cb text-center">
           <div className="spinner-border text-success" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
       )}
-  
-      {/* Edit Profile Modal/Offcanvas */}
+
       <Offcanvas show={showEditModal} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Edit Profile</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Form>
-            {/* Customize the form fields based on your profile data structure */}
             <Form.Group className="mb-3" controlId="formUserName">
               <Form.Label>User Name</Form.Label>
               <Form.Control
@@ -158,20 +144,16 @@ const Profile = () => {
               />
             </Form.Group>
   
-           
             <Form.Group className="mb-3" controlId="formPhoneNo">
-              <Form.Label>Address</Form.Label>
+              <Form.Label>Phone Number</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter The Address "
+                placeholder="Enter Phone Number"
                 name="phoneNo"
-                value={editedProfile.address}
+                value={editedProfile.phoneNo}
                 onChange={handleChange}
               />
             </Form.Group>
-  
-  
-            {/* Add other form fields as needed */}
   
             <Button variant="primary" onClick={handleSave}>
               Save Changes
@@ -179,9 +161,8 @@ const Profile = () => {
           </Form>
         </Offcanvas.Body>
       </Offcanvas>
-    </div>
+    </main>
   );
-  
 };
 
 export default Profile;
