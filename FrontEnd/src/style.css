@@ -6,7 +6,7 @@
 
 .profile {
   position: absolute;
-  margin-left: -12px;
+  
   top: 55.7px;
   color: #f5f2f2;
   overflow-y: auto;
@@ -323,22 +323,16 @@ h6 p {
   /* Adjust the border-width to control the size of the triangle */
   border-color: transparent #000 transparent transparent;
   /* Adjust the second value for the triangle color */
-  margin-right: 8px;
   /* Adjust as needed for spacing */
 }
 
 .down-arrow::before {
-  content: '';
+  position: absolute;
+  right: 9px;
   display: inline-block;
-  width: 0;
-  height: 0;
   border-style: solid;
   border-width: 0 8px 10px 8px;
-  /* Adjust the border-width to control the size of the arrow */
   border-color: transparent transparent #000 transparent;
-  /* Adjust the third value for the arrow color */
-  margin-left: 5px;
-  /* Adjust as needed for spacing */
 }
 
 .down-arrow {
@@ -349,9 +343,9 @@ h6 p {
 .after {
   position: absolute;
   top: 105px;
-  right: 0px;
-  height: 500px;
-
+  right: 10px;
+  height: 300px;
+  width: 10px;
 }
 
 

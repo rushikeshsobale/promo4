@@ -80,7 +80,7 @@ const Profile = () => {
   };
 
   return (
-    <main className="container-fluid profile-container d-flex bg-dark text-light justify-content-center" style={{ height: `${viewportHeight}px` }}>
+    <main className="container-fluid profile d-flex bg-dark text-light justify-content-center" style={{ height: `${viewportHeight}px` }}>
       {!userProfile ? (
         <div className="cb text-center p-3" style={{ marginTop: '-350px' }}>
           <h2>LOOKS LIKE YOU HAVEN'T SIGNED IN</h2>

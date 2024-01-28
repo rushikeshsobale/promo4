@@ -40,7 +40,7 @@ return (
 
     <Offcanvas  placement="start" show={flag} scroll={flag} backdrop={true} onHide={() => {}} >
       <Offcanvas.Header>
-      <Offcanvas.Title>Backdrop with scrolling</Offcanvas.Title>
+      <Offcanvas.Title>BOOKHUB</Offcanvas.Title>
     <Button type="button" aria-label="next slide / item" className=" cb after bg-dark" onClick={()=>{setFlag(!flag)}}>
     
     </Button>
