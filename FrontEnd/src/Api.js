@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import FormData from 'form-data';
 
-const Api = () => {
+const Api = (userId) => {
   const { _id } = useParams();
   const [data, setData] = useState(null);
   const navigate = useNavigate();
-
+  const extractedUserId = userId.userId;
   const fetchData = async () => {
     try {
       const response = await fetch(`http://3.210.184.253:8080/books/${_id}`);
@@ -22,7 +22,7 @@ const Api = () => {
 
   const addToCart = async () => {
     try {
-      const response = await fetch(`http://3.210.184.253:8080/addToCart/${_id}`, {
+      const response = await fetch(`http://3.210.184.253:8080/addToCart/${extractedUserId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

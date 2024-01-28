@@ -260,7 +260,7 @@ router.post('/addToCart/:userId', upload.single("image"), async (req, res) => {
     await user.save();
 
     res.status(200).json({ message: 'Item added to cart successfully' });
-  } catch (error) {
+  } catch (error) {        
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });
   }
