@@ -34,6 +34,7 @@ const Api = () => {
         console.log('Item inserted successfully in the cart');
         navigate('/Mycart');
       } else if (response.status === 404) {
+        console.log("server responded with 404")
         navigate('/Mycart');
       }
     } catch (error) {

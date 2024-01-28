@@ -225,12 +225,12 @@ router.post('/addToCart/:userId', upload.single("image"), async (req, res) => {
   const userId = req.params.userId;
   const newItem = req.body.newItem;
 
-  // Check if newItem exists in the request body
-  if (!newItem) {
-    return res.status(400).json({ error: 'New item details missing in the request body' });
-  }
-
   try {
+    // Check if newItem exists in the request body
+    if (!newItem) {
+      return res.status(400).json({ error: 'New item details missing in the request body' });
+    }
+
     // Find the user by ID
     const user = await allData.findById(userId);
     
@@ -265,6 +265,7 @@ router.post('/addToCart/:userId', upload.single("image"), async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 
 
 
