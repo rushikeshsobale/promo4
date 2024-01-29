@@ -27,7 +27,7 @@ const Topcan = () => {
         aria-labelledby="offcanvasTopLabel"
       >
         <div className='canvas-body d-flex flex-wrap justify-content-between' style={{background:"#787878", height:`${screenHeight}`}}>
-          <div className="" id="navbarNav" style={{background:"black", height:'150px', width:"150px"}}>
+          <div className="" id="navbarNav" style={{background:"black", width:"150px"}}>
 
             <ul className="navbar-nav ul ">
               <li className="nav-item">
