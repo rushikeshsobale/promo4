@@ -8,7 +8,7 @@ const Topcan = () => {
   };
 
   return (
-    <div className="">
+    <div className=""  onClick={toggleOffcanvas}>
       <button
         className="bg-dark m-auto "
         type="button"
@@ -26,8 +26,8 @@ const Topcan = () => {
         id="offcanvasTop"
         aria-labelledby="offcanvasTopLabel"
       >
-        <div className='canvas-body d-flex flex-wrap justify-content-between' style={{background:"black", opacity:10}}>
-          <div className="" id="navbarNav" style={{background:"black", opacity:10}}>
+        <div className='canvas-body d-flex flex-wrap justify-content-between' style={{background:"#787878", opacity:1, height:"600px"}}>
+          <div className="" id="navbarNav" style={{background:"black", height:'150px'}}>
 
             <ul className="navbar-nav ul ">
               <li className="nav-item">

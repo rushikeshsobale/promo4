@@ -12,8 +12,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
   const [birthdate, setBirthdate] = useState('');
-
-  // Error messages state
+  const [successMessage, setSuccessMessage] = useState('');
   const [nameError, setNameError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
@@ -86,7 +85,8 @@ const SignUp = () => {
       console.log(response);
       if (response.ok) {
         await response.json();
-        // Do something with lemao if needed
+         setSuccessMessage('Registration successful! Redirecting to login...');
+         setTimeout(() => navigate('/Signin'), 2000);
       } else if (response.status === 400) {
         setEmailError('Email already exists');
         console.log('Email already exists');
@@ -101,6 +101,11 @@ const SignUp = () => {
   return (
     <div className="container-fluid  bg-dark formdiv" >
       <form onSubmit={handleSubmit} className="mx-auto" style={{marginTop:'-300px'}}>
+      {successMessage && (
+          <div className="alert alert-success" role="alert">
+            {successMessage}
+          </div>
+        )}
         <div className="p-1 cb  text-white mx-auto formdivdiv">
           <div className="row   ">
             <div className="col-6 mb-3">
