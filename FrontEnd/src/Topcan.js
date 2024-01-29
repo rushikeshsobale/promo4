@@ -40,6 +40,9 @@ const Topcan = () => {
                 <Link to="/gallery" className="nav-link">Gallery</Link>
               </li>
               <li className="nav-item">
+                <Link to="/Mycart" className="nav-link">Cart</Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/Signin" className="nav-link">SignIn</Link>
               </li>
 
