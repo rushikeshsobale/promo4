@@ -119,9 +119,9 @@ export default function Mycart() {
                       type="button"
                       className="btn btn-primary position-absolute end-0"
                       onClick={() => handleRemoveFromCart(item._id)}
-                      disabled={loading} // Disable the button when loading
+                      disabled={Rloading} // Disable the button when loading
                     >
-                      {loading ? 'wait...' : 'Remove'}
+                      {Rloading ? 'Removing...' : 'Remove'}
                     </button>
                     </div>
                   </div>

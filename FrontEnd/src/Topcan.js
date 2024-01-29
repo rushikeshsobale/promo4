@@ -8,7 +8,7 @@ const Topcan = () => {
   };
 
   return (
-    <div className=""  onClick={toggleOffcanvas} style={{marginTop:"-5px"}}>
+    <div className=""  onClick={toggleOffcanvas} >
       <button
         className="bg-dark m-auto "
         type="button"
