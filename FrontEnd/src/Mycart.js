@@ -69,6 +69,10 @@ export default function Mycart() {
       console.error('Error removing item from cart:', error);
     }
   };
+  const handleButtonClick = (total) => {
+    // Navigate to the "/CheckoutPage" route with the total as a parameter
+    navigate("/CheckoutPage", { state: { total } });
+  };
 
   useEffect(() => {
     fetchUserCart();
