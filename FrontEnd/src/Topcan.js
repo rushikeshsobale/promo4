@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 const Topcan = () => {
   const [isOffcanvasOpen, setOffcanvasOpen] = useState(false);
-
+  const screenHeight= window.screenHeight
   const toggleOffcanvas = () => {
     setOffcanvasOpen(!isOffcanvasOpen);
   };
 
   return (
-    <div className=""  onClick={toggleOffcanvas}>
+    <div className=""  onClick={toggleOffcanvas} style={{marginTop:"-5px"}}>
       <button
         className="bg-dark m-auto "
         type="button"
@@ -21,13 +21,13 @@ const Topcan = () => {
       </button>
 
       <div
-        className={`offcanvas offcanvas-top bg-info ${isOffcanvasOpen ? 'show  d-block' : ''}`}
+        className={`offcanvas offcanvas-top  ${isOffcanvasOpen ? 'show  d-block' : ''}`}
         tabIndex="-1"
         id="offcanvasTop"
         aria-labelledby="offcanvasTopLabel"
       >
-        <div className='canvas-body d-flex flex-wrap justify-content-between' style={{background:"#787878", opacity:1, height:"600px"}}>
-          <div className="" id="navbarNav" style={{background:"black", height:'150px'}}>
+        <div className='canvas-body d-flex flex-wrap justify-content-between' style={{background:"#787878", height:`${screenHeight}`}}>
+          <div className="" id="navbarNav" style={{background:"black", height:'150px', width:"150px"}}>
 
             <ul className="navbar-nav ul ">
               <li className="nav-item">
@@ -38,6 +38,9 @@ const Topcan = () => {
               </li>
               <li className="nav-item">
                 <Link to="/gallery" className="nav-link">Gallery</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/Signin" className="nav-link">SignIn</Link>
               </li>
 
             </ul>

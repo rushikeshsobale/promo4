@@ -8,6 +8,7 @@ const CheckoutPage = () => {
     const location = useLocation();//it's quit remarkable, the double champ does what the f*ck he wants
      const orders = location.state?.total || 0;
      console.log(orders[1].price)
+     const screenHeight= window.screenHeight
     const [cart, setcart] = useState([]);
     const [formData, setFormData] = useState({
         fullName: '',
@@ -74,7 +75,7 @@ const CheckoutPage = () => {
 
     return (
         <div className="container-fluid product m-auto" style={{ background: "black" }}>
-            <div className="row m-auto" style={{ height: '700px', overflow: 'scroll',flexWrap:"wrap-reverse" }}>
+            <div className="row m-auto" style={{ height: `${screenHeight}`, overflow: 'scroll',flexWrap:"wrap-reverse" }}>
                 <div className="col-lg-7 m-auto" style={{ height: '700px', overflow: 'scroll' }} >
                     <h3 className="mb-3">Contact Information</h3>
                     <div className=" row cb ">

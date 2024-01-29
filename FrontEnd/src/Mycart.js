@@ -1,14 +1,13 @@
-// Mycart.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Mycart() {
-
-  const [data, setdata] = useState([])
+  const [data, setdata] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [Rloading, setRloading]=useState(true)
   const [flag, setFlag] = useState(true);
-
   const navigate = useNavigate();
-  console.log(flag);
+
   const getCookie = (name) => {
     const cookieArray = document.cookie.split(';');
     for (let i = 0; i < cookieArray.length; i++) {
@@ -21,39 +20,34 @@ export default function Mycart() {
   };
 
   const token = getCookie("token");
-  console.log(token);
+
   const fetchUserCart = async () => {
     try {
       const response = await fetch('http://3.210.184.253:8080/profile', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          // Include any necessary authentication headers if required
         },
         credentials: "include",
       });
 
       if (response.ok) {
-        setFlag(true);
         const userProfile = await response.json();
-        console.log('User Profile Received from Server:', userProfile);
-        const { newItem } = userProfile;
-        setdata(newItem);
-        console.log('New Items:', newItem);
+        setdata(userProfile.newItem);
+        setLoading(false);
+        setFlag(true);
       } else {
-
         console.error('Error fetching user profile:', response.statusText);
-        setFlag(false)
+        setFlag(false);
+        setLoading(false);
       }
     } catch (error) {
       console.error('Error fetching user profile:', error);
-
+      setLoading(false);
     }
   };
 
-  // Call the function to fetch user profile
   const handleRemoveFromCart = async (itemId) => {
-
     try {
       const response = await fetch(`http://3.210.184.253:8080/removeFromCart/${itemId}`, {
         method: 'DELETE',
@@ -65,10 +59,9 @@ export default function Mycart() {
       });
 
       if (response.ok) {
-
         console.log('Item removed from cart successfully');
-
         fetchUserCart();
+        setRloading(false)
       } else {
         console.error('Error removing item from cart:', response.statusText);
       }
@@ -76,22 +69,19 @@ export default function Mycart() {
       console.error('Error removing item from cart:', error);
     }
   };
-  const handleButtonClick = (total) => {
-    // Navigate to the "/CheckoutPage" route with the total as a parameter
-    navigate("/CheckoutPage", { state: { total } });
-  };
 
-
-  // Call the function to fetch user profile
   useEffect(() => {
     fetchUserCart();
-  }, [])
+  }, []);
+
   let total = 0;
   for (let i = 0; i < data.length; i++) {
     total = total + data[i].price;
   }
 
-  if (flag == true) {
+  if (loading) {
+    return <div className="container-fluid m-auto product d-block bg-dark " style={{height:"900px", overflow:"scroll"}}>Loading...</div>;
+  } else if (flag) {
     return (
       <div className="container-fluid m-auto product d-block bg-dark " style={{height:"900px", overflow:"scroll"}} >
         <div className="row w-100 m-auto ">
@@ -124,21 +114,20 @@ export default function Mycart() {
                     <button
                       type="button"
                       className="btn btn-primary position-absolute end-0"
-                      onClick={() => handleRemoveFromCart(item._id)} // Uncomment and add logic if needed
+                      onClick={() => handleRemoveFromCart(item._id)}
+                      disabled={loading} // Disable the button when loading
                     >
-                      remove
+                      {loading ? 'wait...' : 'Remove'}
                     </button>
                     </div>
                   </div>
                 </div>
               ))}
-
             </div>
           </div>
           <div className="col-lg-4 cb border border-warning border-2  rounded 2px p-3">
             <h3>Order Details</h3>
             {data.map((value, index) => (
-
               <div key={index} className="  order cb card-body text-white mx-auto d-flex  border-top">
                 {value.image && (
                   <img
@@ -156,9 +145,7 @@ export default function Mycart() {
                 <p className="card-title m-1">{value.title}</p>|
                 <p className="card-title m-1">Price :{value.price}</p>|
                 <p className="card-title m-1 ">Auth: {value.author}</p>
-
               </div>
-
             ))}
             <h3>Total:{total}</h3>
             <button type="button" className="btn btn-warning" onClick={() => { handleButtonClick(data) }}>
@@ -167,52 +154,32 @@ export default function Mycart() {
           </div>
         </div>
       </div>
-
-
-
     );
-  }
-  else {
+  } else {
     return (
-
       <div className=" container-fluid m-auto product d-flex bg-dark justify-content-center">
-
         <div id="sc-empty-cart" className="a-row a-spacing-top-extra-large pr d-flex">
           <div className="a-column a-span4 mx-5">
             <img src="https://m.media-amazon.com/images/G/31/cart/empty/kettle-desaturated._CB424694257_.svg" width="100%" />
           </div>
           <div className="a-column a-span8 a-span-last mx-auto">
             <div className="a-row sc-your-amazon-cart-is-empty">
-              <h1>
-                Your  Cart  is empty
-              </h1>
+              <h1>Your Cart is empty</h1>
             </div>
             <div className="a-section a-spacing-none sc-shop-todays-deals-link">
-
-              <a className="a-link-normal">
-                Shop today’s deals
-              </a>
+              <a className="a-link-normal">Shop today’s deals</a>
             </div>
-
-
             <div className="a-section a-spacing-medium a-spacing-top-medium sc-sign-in">
-
               <span className="a-button a-button-primary" id="a-autoid-4" />
               <span className=" nav-link " onClick={() => { navigate("/Signin") }}>
-                <a className="a-link-normal">
-                  Sign In to your acount
-                </a>
+                <a className="a-link-normal">Sign In to your account</a>
               </span>
               <span className="a-button a-button-base" id="a-autoid-5" />
-              <span className="a-size-base-plus">
-                Sign up now
-              </span>
-
+              <span className="a-size-base-plus">Sign up now</span>
             </div>
           </div>
         </div>
       </div>
     );
-
   }
 }

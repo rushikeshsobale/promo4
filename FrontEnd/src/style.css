@@ -492,13 +492,16 @@ textarea {
 /* Media query for mobile devices */
 @media (max-width: 480px) {
   .searchBox input, .searchBox button{
-    margin-top: 5px;
     height: 29px;
   }
   .searchBox button {
     padding: 2px;
   }
-
+  .before{
+    height: 50px;
+    top:200px;
+    left:-12px;
+   }
   .searchBox input {
     
     width:100px;

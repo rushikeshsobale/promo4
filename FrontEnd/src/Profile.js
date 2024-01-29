@@ -96,10 +96,10 @@ const Profile = () => {
             <p>Error: {error}</p>
           ) : userProfile ? (
             <div className="fs-3">
-              <p>Username: {userProfile.userName}</p>
-              <p>Email: {userProfile.email}</p>
-              <p>Phone Number: {userProfile.phoneNo}</p>
-              <p>User ID: {userProfile._id}</p>
+              <h2>Username: {userProfile.userName}</h2>
+              <h2>Email: {userProfile.email}</h2>
+              <h3>Phone Number: {userProfile.phoneNo}</h3>
+              <h4>User ID: {userProfile._id}</h4>
             </div>
           ) : (
             <p>Loading...</p>
